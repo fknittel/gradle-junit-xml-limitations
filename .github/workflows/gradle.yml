@@ -18,7 +18,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -32,9 +31,15 @@ jobs:
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
-    - name: Archive test results
+    - name: Archive junit xml test result
       if: always()
       uses: actions/upload-artifact@v3
       with:
-        name: test-results
+        name: junit-test-result
+        path: build/test-results/TEST-org.example.gradle.junit.xml.limitations.FailingParameterizedTest.xml
+    - name: Archive all test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: all-test-results
         path: build/test-results/**
