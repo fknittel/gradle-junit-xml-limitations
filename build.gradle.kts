@@ -16,7 +16,5 @@ tasks.named<Test>("test") {
     reports {
         junitXml.required.set(true)
         junitXml.mergeReruns.set(true)
-
-        html.required.set(false)
     }
 }
