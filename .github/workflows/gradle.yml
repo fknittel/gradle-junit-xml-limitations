@@ -36,7 +36,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: junit-test-result
-        path: build/test-results/TEST-org.example.gradle.junit.xml.limitations.FailingParameterizedTest.xml
+        path: build/test-results/test/TEST-org.example.gradle.junit.xml.limitations.FailingParameterizedTest.xml
     - name: Archive all test results
       if: always()
       uses: actions/upload-artifact@v3
