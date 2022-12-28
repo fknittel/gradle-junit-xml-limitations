@@ -12,4 +12,11 @@ dependencies {
 
 tasks.named<Test>("test") {
     useJUnitPlatform()
+
+    reports {
+        junitXml.required.set(true)
+        junitXml.mergeReruns.set(true)
+
+        html.required.set(false)
+    }
 }
